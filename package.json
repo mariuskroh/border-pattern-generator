@@ -1,0 +1,27 @@
+{
+  "name": "border-pattern-generator",
+  "version": "1.0.1",
+  "description": "Pattern generator inspired by Vera Molnar's plotter drawings",
+  "main": "index.html",
+  "scripts": {
+    "files:build": "echo 'COMPILING SCSS FILES' && npm run compile:scss -s",
+    "compile:scss": "sass ./dev/scss/index.scss ./public/css/style.css",
+    "postcompile:scss": "echo 'DONE, NOW MINIFYING STYLE.CSS' && npm run minify:css",
+    "minify:css": "uglifycss ./public/css/style.css > ./public/css/style.min.css",
+    "postminify:css": "echo SUCCESS",
+    "reload:index": "reload --verbose",
+    "watch:dir": "watch 'npm run files:build' ./dev",
+    "version:patch": "npm version patch"
+  },
+  "author": "Marius Kroh",
+  "license": "",
+  "devDependencies": {
+    "reload": "^3.0.4",
+    "sass": "^1.25.0",
+    "uglifycss": "0.0.29",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.5"
+  }
+}
