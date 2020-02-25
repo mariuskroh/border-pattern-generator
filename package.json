@@ -4,7 +4,8 @@
   "description": "Pattern generator inspired by Vera Molnar's plotter drawings",
   "main": "index.html",
   "scripts": {
-    "files:build": "echo 'COMPILING SCSS FILES' && npm run compile:scss -s",
+    "lint": "eslint dev/js/**",
+    "build": "clear && echo 'LINTING...' && npm run lint &&echo 'COMPILING SCSS FILES...' && npm run compile:scss -s",
     "compile:scss": "sass ./dev/scss/index.scss ./public/css/style.css",
     "postcompile:scss": "echo 'DONE, NOW MINIFYING STYLE.CSS' && npm run minify:css",
     "minify:css": "uglifycss ./public/css/style.css > ./public/css/style.min.css",
@@ -15,7 +16,13 @@
   },
   "author": "Marius Kroh",
   "license": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mariuskroh/border-pattern-generator"
+  },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
     "reload": "^3.0.4",
     "sass": "^1.25.0",
     "uglifycss": "0.0.29",
