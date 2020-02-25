@@ -1,0 +1,29 @@
+@use "../utils/variables";
+
+#wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #canvas {
+    background-color: variables.$bright;
+    padding: variables.$gap-size;
+    height: variables.$item-base * variables.$item-size +
+      (variables.$item-base - 1) * variables.$gap-size;
+    width: variables.$item-base * variables.$item-size +
+      (variables.$item-base - 1) * variables.$gap-size;
+    display: grid;
+    grid-template-columns: repeat(variables.$item-base, variables.$item-size);
+    grid-template-rows: repeat(variables.$item-base, variables.$item-size);
+    grid-column-gap: variables.$gap-size;
+    grid-row-gap: variables.$gap-size;
+    .grid-element {
+      height: variables.$item-size;
+      width: variables.$item-size;
+      //background-color:lightgrey;
+      border-color: variables.$border-color;
+      border-style: solid;
+    }
+  }
+}

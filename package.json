@@ -11,7 +11,7 @@
     "minify:css": "uglifycss ./public/css/style.css > ./public/css/style.min.css",
     "postminify:css": "echo SUCCESS",
     "reload:index": "reload --verbose",
-    "watch:dir": "watch 'npm run files:build' ./dev",
+    "watch:dir": "watch 'npm run build' ./dev",
     "version:patch": "npm version patch"
   },
   "author": "Marius Kroh",

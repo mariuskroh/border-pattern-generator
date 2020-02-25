@@ -1,0 +1,10 @@
+@use "../utils/variables";
+
+body {
+  width: 100%;
+
+  background-color: variables.$dark;
+  color: variables.$bright;
+  font-family: sans-serif;
+  font-size: 24px;
+}
