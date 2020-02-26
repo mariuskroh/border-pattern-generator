@@ -12,6 +12,7 @@
     "postminify:css": "echo SUCCESS",
     "reload:index": "reload --verbose",
     "watch:dir": "watch 'npm run build' ./dev",
+    "webpack:dev": "webpack --mode development",
     "version:patch": "npm version patch"
   },
   "author": "Marius Kroh",
@@ -23,10 +24,13 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.3",
+    "nodemon": "^2.0.2",
     "reload": "^3.0.4",
     "sass": "^1.25.0",
     "uglifycss": "0.0.29",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "html2canvas": "^1.0.0-rc.5"
