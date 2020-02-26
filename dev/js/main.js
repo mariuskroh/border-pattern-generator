@@ -1,15 +1,16 @@
+//globals
 const screen = document.querySelector("#canvas");
 const base = 16;
 const borderWidth = 4;
-
 const createPattern = document.querySelector(".create-pattern");
 
-function clearCanvas() {
-  screen.innerHTML = "";
-}
+//import
+let globals = require("./globals");
+let clearPattern = require("./clearpattern");
 
+//pattern
 function makePattern() {
-  clearCanvas();
+  clearPattern();
   let int = base;
   for (let i = 0; i < int * int; i++) {
     const gridElement = document.createElement("div");
@@ -32,5 +33,4 @@ function addBorder(item) {
 }
 
 makePattern();
-
 createPattern.addEventListener("click", makePattern);
