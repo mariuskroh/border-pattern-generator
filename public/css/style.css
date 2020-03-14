@@ -139,6 +139,10 @@ body {
   font-size: 24px;
 }
 
+.grid-element {
+  box-sizing: border-box;
+}
+
 #wrapper {
   height: 100vh;
   display: flex;
@@ -148,8 +152,6 @@ body {
 #wrapper #canvas {
   background-color: #fff;
   padding: 16px;
-  height: 720px;
-  width: 720px;
   display: grid;
   grid-template-columns: repeat(16, 30px);
   grid-template-rows: repeat(16, 30px);

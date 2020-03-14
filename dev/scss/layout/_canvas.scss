@@ -9,10 +9,8 @@
   #canvas {
     background-color: variables.$bright;
     padding: variables.$gap-size;
-    height: variables.$item-base * variables.$item-size +
-      (variables.$item-base - 1) * variables.$gap-size;
-    width: variables.$item-base * variables.$item-size +
-      (variables.$item-base - 1) * variables.$gap-size;
+    //height: 700px;
+    //width: 700px;
     display: grid;
     grid-template-columns: repeat(variables.$item-base, variables.$item-size);
     grid-template-rows: repeat(variables.$item-base, variables.$item-size);
