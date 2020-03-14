@@ -97,6 +97,17 @@ eval("const screen = document.querySelector(\"#canvas\");\n\nfunction clearPatte
 
 /***/ }),
 
+/***/ "./dev/js/globals.js":
+/*!***************************!*\
+  !*** ./dev/js/globals.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("//globals\nlet globals = {\n  base: 16,\n  borderWidth: 4,\n  screen: document.querySelector(\"#canvas\"),\n  createPattern: document.querySelector(\".create-pattern\")\n};\n\nmodule.exports = globals;\n\n\n//# sourceURL=webpack:///./dev/js/globals.js?");
+
+/***/ }),
+
 /***/ "./dev/js/main.js":
 /*!************************!*\
   !*** ./dev/js/main.js ***!
@@ -104,7 +115,7 @@ eval("const screen = document.querySelector(\"#canvas\");\n\nfunction clearPatte
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("//globals\nconst screen = document.querySelector(\"#canvas\");\nconst base = 16;\nconst borderWidth = 4;\nconst createPattern = document.querySelector(\".create-pattern\");\n\n//import\nlet clearPattern = __webpack_require__(/*! ./clearpattern */ \"./dev/js/clearpattern.js\");\n\n//pattern\nfunction makePattern() {\n  clearPattern();\n  let int = base;\n  for (let i = 0; i < int * int; i++) {\n    const gridElement = document.createElement(\"div\");\n    addBorder(gridElement);\n    gridElement.classList.add(\"grid-element\");\n    screen.appendChild(gridElement);\n  }\n}\n\nfunction addBorder(item) {\n  const randomNumber = Math.floor(Math.random() * Math.floor(3));\n  const borderVariations = [\n    `${borderWidth}px ${borderWidth}px ${borderWidth}px 0`,\n    `${borderWidth}px ${borderWidth}px 0 ${borderWidth}px`,\n    `${borderWidth}px 0 ${borderWidth}px ${borderWidth}px`,\n    `0 ${borderWidth}px ${borderWidth}px ${borderWidth}px`\n  ];\n  item.style.borderWidth = borderVariations[randomNumber];\n  return item;\n}\n\nmakePattern();\ncreatePattern.addEventListener(\"click\", makePattern);\n\n\n//# sourceURL=webpack:///./dev/js/main.js?");
+eval("//import\nlet globals = __webpack_require__(/*! ./globals */ \"./dev/js/globals.js\");\nlet clearPattern = __webpack_require__(/*! ./clearpattern */ \"./dev/js/clearpattern.js\");\n//pattern\nfunction makePattern() {\n  clearPattern();\n  let int = globals.base;\n  for (let i = 0; i < int * int; i++) {\n    const gridElement = document.createElement(\"div\");\n    addBorder(gridElement);\n    gridElement.classList.add(\"grid-element\");\n    globals.screen.appendChild(gridElement);\n  }\n}\n\nfunction addBorder(item) {\n  const randomNumber = Math.floor(Math.random() * Math.floor(3));\n  const borderVariations = [\n    `${globals.borderWidth}px ${globals.borderWidth}px ${globals.borderWidth}px 0`,\n    `${globals.borderWidth}px ${globals.borderWidth}px 0 ${globals.borderWidth}px`,\n    `${globals.borderWidth}px 0 ${globals.borderWidth}px ${globals.borderWidth}px`,\n    `0 ${globals.borderWidth}px ${globals.borderWidth}px ${globals.borderWidth}px`\n  ];\n  item.style.borderWidth = borderVariations[randomNumber];\n  return item;\n}\n\nmakePattern();\ncreatePattern.addEventListener(\"click\", makePattern);\n\n\n//# sourceURL=webpack:///./dev/js/main.js?");
 
 /***/ })
 
