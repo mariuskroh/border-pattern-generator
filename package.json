@@ -1,38 +1,16 @@
 {
   "name": "border-pattern-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pattern generator inspired by Vera Molnar's plotter drawings",
-  "main": "index.html",
-  "scripts": {
-    "lint": "eslint dev/js/**",
-    "build": "clear && echo 'LINTING...' && npm run lint &&echo 'COMPILING SCSS FILES...' && npm run compile:scss -s",
-    "compile:scss": "sass ./dev/scss/index.scss ./public/css/style.css",
-    "postcompile:scss": "echo 'DONE, NOW MINIFYING STYLE.CSS...' && npm run minify:css",
-    "minify:css": "uglifycss ./public/css/style.css > ./public/css/style.min.css",
-    "postminify:css": "echo 'SUCCESS, BUNDLING JS...' && npm run webpack:dev",
-    "reload:index": "reload --verbose",
-    "watch:dir": "watch 'npm run build' ./dev",
-    "webpack:dev": "webpack --mode development",
-    "postwebpack:dev": "echo 'PROCESS COMPLETE (for now)'",
-    "version:patch": "npm version patch"
-  },
+  "main": "./dist/index.html",
+  "scripts": {},
   "author": "Marius Kroh",
   "license": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/mariuskroh/border-pattern-generator"
   },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.18.3",
-    "nodemon": "^2.0.2",
-    "reload": "^3.0.4",
-    "sass": "^1.25.0",
-    "uglifycss": "0.0.29",
-    "watch": "^1.0.2",
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
-  },
+  "devDependencies": {},
   "dependencies": {
     "html2canvas": "^1.0.0-rc.5"
   }
