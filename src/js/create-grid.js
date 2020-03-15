@@ -1,9 +1,13 @@
-const canvas = document.querySelector("#canvas");
-const createGrid = function() {
-  canvas.style.backgroundColor = "white";
-  canvas.style.padding = "16px";
-  //set height and width
+import { base, gapSize, canvas } from "./globals";
 
-  console.log("wurst");
+//all values from globals should come from "get settings" later
+const createGrid = function() {
+  const canvasWidth = canvas.clientWidth;
+  console.log(canvasWidth);
+  canvas.style.gridTemplateColumns = `repeat(${base}, ${canvasWidth / base}px)`;
+  canvas.style.gridTemplateRows = `repeat(${base}, ${canvasWidth / base}px)`;
+  canvas.style.gridColumnGap = `${gapSize}px`;
+  canvas.style.gridRowGap = `${gapSize}px`;
 };
-module.exports = createGrid;
+
+export default createGrid;

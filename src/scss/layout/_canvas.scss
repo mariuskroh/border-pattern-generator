@@ -14,13 +14,7 @@
     max-height: 1000px;
     min-width: 500px;
     min-height: 500px;
-    grid-template-columns: repeat(variables.$item-base, variables.$item-size);
-    grid-template-rows: repeat(variables.$item-base, variables.$item-size);
-    grid-column-gap: variables.$gap-size;
-    grid-row-gap: variables.$gap-size;
     .grid-element {
-      height: variables.$item-size;
-      width: variables.$item-size;
       //background-color:lightgrey;
       border-color: variables.$border-color;
       border-style: solid;
