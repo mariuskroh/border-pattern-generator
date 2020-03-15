@@ -1,6 +1,7 @@
-const canvas = document.querySelector("#canvas");
+import { canvas } from "./globals";
 
 const clearPattern = function() {
   canvas.innerHTML = "";
 };
+
 export default clearPattern;
