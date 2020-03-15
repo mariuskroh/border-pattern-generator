@@ -1,6 +1,6 @@
-const screen = document.querySelector("#canvas");
+const canvas = document.querySelector("#canvas");
 
-function clearPattern() {
-  screen.innerHTML = "";
-}
-module.exports = clearPattern;
+const clearPattern = function() {
+  canvas.innerHTML = "";
+};
+export default clearPattern;

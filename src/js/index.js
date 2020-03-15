@@ -5,35 +5,35 @@ if (module.hot) {
 //imports
 import "../index.html";
 import "../scss/index.scss";
-const globals = require("./globals");
-const clearPattern = require("./clear-pattern");
+import { base, borderWidth, canvas, createPattern } from "./globals";
+import clearPattern from "./clear-pattern";
 const getSettings = require("./get-settings");
 const createGrid = require("./create-grid");
 
-//pattern
+//main function
 function makePattern() {
   clearPattern();
   createGrid();
-  let int = globals.base;
+  let int = base;
   for (let i = 0; i < int * int; i++) {
     const gridElement = document.createElement("div");
     addBorder(gridElement);
     gridElement.classList.add("grid-element");
-    globals.screen.appendChild(gridElement);
+    canvas.appendChild(gridElement);
   }
 }
 
 function addBorder(item) {
   const randomNumber = Math.floor(Math.random() * Math.floor(3));
   const borderVariations = [
-    `${globals.borderWidth}px ${globals.borderWidth}px ${globals.borderWidth}px 0`,
-    `${globals.borderWidth}px ${globals.borderWidth}px 0 ${globals.borderWidth}px`,
-    `${globals.borderWidth}px 0 ${globals.borderWidth}px ${globals.borderWidth}px`,
-    `0 ${globals.borderWidth}px ${globals.borderWidth}px ${globals.borderWidth}px`
+    `${borderWidth}px ${borderWidth}px ${borderWidth}px 0`,
+    `${borderWidth}px ${borderWidth}px 0 ${borderWidth}px`,
+    `${borderWidth}px 0 ${borderWidth}px ${borderWidth}px`,
+    `0 ${borderWidth}px ${borderWidth}px ${borderWidth}px`
   ];
   item.style.borderWidth = borderVariations[randomNumber];
   return item;
 }
 
 makePattern();
-globals.createPattern.addEventListener("click", makePattern);
+createPattern.addEventListener("click", makePattern);
