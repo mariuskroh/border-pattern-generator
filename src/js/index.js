@@ -1,8 +1,15 @@
-//import
+//hotModuleReplacement
+if (module.hot) {
+  module.hot.accept();
+}
+//imports
+import "../index.html";
+import "../scss/index.scss";
 const globals = require("./globals");
 const clearPattern = require("./clear-pattern");
 const getSettings = require("./get-settings");
 const createGrid = require("./create-grid");
+
 //pattern
 function makePattern() {
   clearPattern();
