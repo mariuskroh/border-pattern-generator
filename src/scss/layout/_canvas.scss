@@ -7,11 +7,13 @@
   justify-content: center;
 
   #canvas {
+    display: grid;
     background-color: variables.$bright;
     padding: variables.$gap-size;
-    //height: 700px;
-    //width: 700px;
-    display: grid;
+    max-width: 1000px;
+    max-height: 1000px;
+    min-width: 500px;
+    min-height: 500px;
     grid-template-columns: repeat(variables.$item-base, variables.$item-size);
     grid-template-rows: repeat(variables.$item-base, variables.$item-size);
     grid-column-gap: variables.$gap-size;
