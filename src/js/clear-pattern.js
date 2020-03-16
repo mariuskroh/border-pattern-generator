@@ -1,7 +1,7 @@
 import { canvas } from "./globals";
 
 const clearPattern = function() {
-  canvas.innerHTML = "";
+  return (canvas.innerHTML = "");
 };
 
 export default clearPattern;
