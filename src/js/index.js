@@ -26,3 +26,5 @@ createPattern.addEventListener("click", makePattern);
 //run on input change
 inputs.forEach(input => input.addEventListener("change", getSettings));
 inputs.forEach(input => input.addEventListener("change", makePattern));
+//resize grid
+window.addEventListener("resize", createCanvas);
