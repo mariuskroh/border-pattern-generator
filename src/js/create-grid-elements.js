@@ -1,7 +1,10 @@
-import { base, canvas } from "./globals";
+import { canvas } from "./globals";
+import { settings } from "./get-settings.js";
 import getGridElementStyle from "./get-grid-element-style.js";
-//all values from globals should come from "get settings" later
+
 const createGridElements = function() {
+  const base = settings.baseCount;
+
   for (let i = 0; i < base * base; i++) {
     const gridElement = document.createElement("div");
     getGridElementStyle(gridElement);
