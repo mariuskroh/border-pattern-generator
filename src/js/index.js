@@ -18,6 +18,6 @@ function makePattern() {
   createGrid();
   createGridElements();
 }
-
+//run on page load
 makePattern();
 createPattern.addEventListener("click", makePattern);
