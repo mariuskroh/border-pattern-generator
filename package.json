@@ -1,7 +1,7 @@
 {
   "name": "border-pattern-generator",
-  "version": "1.0.2",
-  "description": "CSS pattern generator inspired by Vera Molnar's plotter drawings",
+  "version": "1.0.0",
+  "description": "A css based pattern generator inspired by Vera Molnar's plotter drawings",
   "main": "./dist/index.html",
   "scripts": {
     "develop": "webpack-dev-server --config webpack.dev.js",

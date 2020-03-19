@@ -12,6 +12,7 @@ import createGrid from "./create-grid.js";
 import createGridElements from "./create-grid-elements.js";
 import { getSettings } from "./get-settings.js";
 import htmlCanvas from "./export-pattern.js";
+import displayVersion from "./display-version.js";
 
 //main function
 function makePattern() {
@@ -30,5 +31,7 @@ inputs.forEach(input => input.addEventListener("change", getSettings));
 inputs.forEach(input => input.addEventListener("change", makePattern));
 //resize canvas
 window.addEventListener("resize", createCanvas);
-// export pattern
+//export pattern
 exportPattern.addEventListener("click", htmlCanvas);
+//get version
+displayVersion();
