@@ -1,0 +1,17 @@
+@use "../utils/variables";
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+
+  & a,
+  a:active,
+  a:visited {
+    color: variables.$bright;
+    text-decoration: none;
+  }
+  & a:hover {
+    text-decoration: underline;
+  }
+}
