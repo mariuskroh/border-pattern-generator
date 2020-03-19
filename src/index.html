@@ -29,7 +29,7 @@
             max="64"
             value="16"
           />
-          <label for="border-width">border width</label>
+          <label for="border-width">line width</label>
           <input
             id="border-width"
             type="range"
@@ -48,6 +48,14 @@
             max="32"
             value="16"
           />
+          <label for="border-style">line style</label>
+          <select name="border-style" size="1">
+            <option value="single">single</option>
+            <option value="parallel">parallel</option>
+            <option value="corner">corner</option>
+            <option value="open">open</option>
+            <option value="full">full</option>
+          </select>
         </div>
         <button class="button export-pattern">
           Export Pattern
