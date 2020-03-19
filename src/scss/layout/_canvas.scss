@@ -4,6 +4,9 @@
   #canvas {
     position: absolute;
     display: grid;
+    //temp
+    overflow: hidden;
+
     background-color: variables.$bright;
     max-width: 1000px;
     max-height: 1000px;
