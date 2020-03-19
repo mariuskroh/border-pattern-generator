@@ -1,14 +1,16 @@
 import { canvas } from "./globals.js";
 import html2canvas from "html2canvas";
 
-// const options = {
-//   width: 1500,
-//   height: 1500
-// };
+const options = {
+  onclone: function() {
+    canvas.style.width = "1000 px";
+  }
+};
 export const htmlCanvas = function() {
-  html2canvas(canvas).then(function(canvas) {
+  html2canvas(canvas, options).then(function(canvas) {
     const img = canvas.toDataURL("image/png");
     downloadImage(img, "pattern.png");
+    console.log("toData");
   });
 };
 export default htmlCanvas;
