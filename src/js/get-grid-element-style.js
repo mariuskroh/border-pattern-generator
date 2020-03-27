@@ -1,44 +1,46 @@
 import { settings } from "./get-settings.js";
-
+// refactor this in further versions in more functions
+// to make even more complicated patterns
 const getGridElementStyle = function(item) {
-  const borderWidth = settings.borderWidth;
-  // set the different styles
-  // needs to be refactored into separate object
-  const singleVariations = [
-    `${borderWidth}px 0 0 0`,
-    `0 ${borderWidth}px 0 0`,
-    `0 0${borderWidth}px 0`,
-    `0 0 0 ${borderWidth}px `,
-    `0`
-  ];
-  const paraVariations = [
-    `${borderWidth}px 0 ${borderWidth}px 0`,
-    `0 ${borderWidth}px 0 ${borderWidth}px`,
-    `${borderWidth}px 0 ${borderWidth}px 0`,
-    `0 ${borderWidth}px 0 ${borderWidth}px`,
-    `0`
-  ];
-  const cornerVariations = [
-    //sth not right here
-    `${borderWidth}px ${borderWidth}px 0 0`,
-    `0 ${borderWidth}px ${borderWidth} px 0`,
-    `0 0 ${borderWidth}px ${borderWidth}px`,
-    `${borderWidth}px 0 0 ${borderWidth}px`,
-    `0`
-  ];
-  const openVariations = [
-    `${borderWidth}px ${borderWidth}px ${borderWidth}px 0`,
-    `${borderWidth}px ${borderWidth}px 0 ${borderWidth}px`,
-    `${borderWidth}px 0 ${borderWidth}px ${borderWidth}px`,
-    `0 ${borderWidth}px ${borderWidth}px ${borderWidth}px`,
-    `0`
-  ];
-  const fullVariations = [`${borderWidth}px `, `0`];
-  ///change to select random based on arr length!!
-  const randomNumber = Math.floor(Math.random() * Math.floor(4));
-  //still need to apply dynamic selection
-  const borderVariations = singleVariations;
-  item.style.borderWidth = borderVariations[randomNumber];
+  const strokeWidth = settings.strokeWidth;
+  const selectedStyle = settings.elementStyle;
+  // the different styles
+  const elementStyles = {
+    single: [
+      `${strokeWidth}px 0 0 0`,
+      `0 ${strokeWidth}px 0 0`,
+      `0 0${strokeWidth}px 0`,
+      `0 0 0 ${strokeWidth}px `
+    ],
+    parallel: [
+      `${strokeWidth}px 0 ${strokeWidth}px 0`,
+      `0 ${strokeWidth}px 0 ${strokeWidth}px`
+    ],
+    corner: [
+      //sth not right here
+      `${strokeWidth}px ${strokeWidth}px 0 0`,
+      `0 ${strokeWidth}px ${strokeWidth}px 0`,
+      `0 0 ${strokeWidth}px ${strokeWidth}px`,
+      `${strokeWidth}px 0 0 ${strokeWidth}px`
+    ],
+    open: [
+      `${strokeWidth}px ${strokeWidth}px ${strokeWidth}px 0`,
+      `${strokeWidth}px ${strokeWidth}px 0 ${strokeWidth}px`,
+      `${strokeWidth}px 0 ${strokeWidth}px ${strokeWidth}px`,
+      `0 ${strokeWidth}px ${strokeWidth}px ${strokeWidth}px`
+    ],
+    square: [`${strokeWidth}px `]
+  };
+  // setup the current elements variations
+  //let styleVariations = [];
+  //empty space selector comes here later + pushed to variations array!!
+  // get random number based on elementStyle array length
+  const limit = elementStyles[selectedStyle].length;
+  const getRandomNumber = Math.floor(Math.random() * Math.floor(limit));
+  // get the style & apply to element
+  const style = elementStyles[selectedStyle];
+
+  item.style.borderWidth = style[getRandomNumber];
   return item;
 };
 
