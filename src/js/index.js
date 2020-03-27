@@ -5,7 +5,7 @@ if (module.hot) {
 //imports
 import "../index.html";
 import "../scss/index.scss";
-import { inputs, createPattern, exportPattern } from "./globals.js";
+import { inputs, select, createPattern, exportPattern } from "./globals.js";
 import clearPattern from "./clear-pattern.js";
 import createCanvas from "./create-canvas.js";
 import createGrid from "./create-grid.js";
@@ -29,6 +29,8 @@ createPattern.addEventListener("click", makePattern);
 //get settings & run on input change
 inputs.forEach(input => input.addEventListener("change", getSettings));
 inputs.forEach(input => input.addEventListener("change", makePattern));
+select.addEventListener("change", getSettings);
+select.addEventListener("change", makePattern);
 //resize canvas
 window.addEventListener("resize", createCanvas);
 //export pattern
