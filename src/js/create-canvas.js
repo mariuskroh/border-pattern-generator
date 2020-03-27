@@ -1,8 +1,7 @@
 import { canvas } from "./globals";
 const createCanvas = function() {
   const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-  const size = canvas.offsetWidth / 2;
+
   canvas.style.width = `${windowWidth / 2}px`;
   canvas.style.height = `${windowWidth / 2}px`;
   canvas.style.left = `50%`;
