@@ -7,6 +7,7 @@ const createCanvas = function() {
   canvas.style.left = `50%`;
   canvas.style.top = `50%`;
   canvas.style.transform = `translate(-50%, -50%)`;
+  return;
 };
 
 export default createCanvas;
