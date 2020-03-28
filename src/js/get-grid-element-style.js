@@ -3,6 +3,7 @@ import { settings } from "./get-settings.js";
 // to make even more complicated patterns
 const getGridElementStyle = function(item) {
   const strokeWidth = settings.strokeWidth;
+  const roundness = settings.roundness;
   const selectedStyle = settings.elementStyle;
   // the different styles
   const elementStyles = {
@@ -41,6 +42,8 @@ const getGridElementStyle = function(item) {
   const style = elementStyles[selectedStyle];
 
   item.style.borderWidth = style[getRandomNumber];
+  //apply roundness
+  item.style.borderRadius = `${roundness}%`;
   return item;
 };
 
