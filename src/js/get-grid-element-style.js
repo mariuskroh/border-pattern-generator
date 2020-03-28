@@ -4,7 +4,9 @@ import { settings } from "./get-settings.js";
 const getGridElementStyle = function(item) {
   const strokeWidth = settings.strokeWidth;
   const roundness = settings.roundness;
+  const spaces = settings.spaces;
   const selectedStyle = settings.elementStyle;
+
   // the different styles
   const elementStyles = {
     single: [
@@ -32,16 +34,20 @@ const getGridElementStyle = function(item) {
     ],
     square: [`${strokeWidth}px `]
   };
-  // setup the current elements variations
-  //let styleVariations = [];
-  //empty space selector comes here later + pushed to variations array!!
-  // get random number based on elementStyle array length
-  const limit = elementStyles[selectedStyle].length;
+  // setup the  elements variations
+  let styleVariations = [];
+  // push spaces which will result in an empty element
+  for (let i = 0; i < spaces; i++) {
+    styleVariations.push(`0`);
+  }
+  // now get selected element style from the object above and push each setting
+  const style = elementStyles[selectedStyle];
+  style.forEach(element => styleVariations.push(element));
+  // get random number based on styleVariations array length
+  const limit = styleVariations.length;
   const getRandomNumber = Math.floor(Math.random() * Math.floor(limit));
   // get the style & apply to element
-  const style = elementStyles[selectedStyle];
-
-  item.style.borderWidth = style[getRandomNumber];
+  item.style.borderWidth = styleVariations[getRandomNumber];
   //apply roundness
   item.style.borderRadius = `${roundness}%`;
   return item;
