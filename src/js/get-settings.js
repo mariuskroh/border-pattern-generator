@@ -6,6 +6,7 @@ const roundness = document.querySelector("#roundness");
 const spaces = document.querySelector("#spaces");
 const rotation = document.querySelector("#rotation");
 const scale = document.querySelector("#scale");
+const randomize = document.querySelector("#randomize");
 
 export let settings = {};
 export const getSettings = function() {
@@ -17,7 +18,8 @@ export const getSettings = function() {
     roundness: roundness.value,
     spaces: spaces.value,
     rotation: rotation.value,
-    scale: scale.value
+    scale: scale.value,
+    randomize: randomize.value
   };
   console.clear();
   console.table(settings);
