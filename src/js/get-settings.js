@@ -4,6 +4,7 @@ const gapSize = document.querySelector("#gap-size");
 const elementStyle = document.querySelector("#element-style");
 const roundness = document.querySelector("#roundness");
 const spaces = document.querySelector("#spaces");
+const rotation = document.querySelector("#rotation");
 
 export let settings = {};
 export const getSettings = function() {
@@ -13,7 +14,8 @@ export const getSettings = function() {
     gapSize: gapSize.value,
     elementStyle: elementStyle.value,
     roundness: roundness.value,
-    spaces: spaces.value
+    spaces: spaces.value,
+    rotation: rotation.value
   };
   console.clear();
   console.table(settings);
