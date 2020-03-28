@@ -5,6 +5,7 @@ const elementStyle = document.querySelector("#element-style");
 const roundness = document.querySelector("#roundness");
 const spaces = document.querySelector("#spaces");
 const rotation = document.querySelector("#rotation");
+const scale = document.querySelector("#scale");
 
 export let settings = {};
 export const getSettings = function() {
@@ -15,7 +16,8 @@ export const getSettings = function() {
     elementStyle: elementStyle.value,
     roundness: roundness.value,
     spaces: spaces.value,
-    rotation: rotation.value
+    rotation: rotation.value,
+    scale: scale.value
   };
   console.clear();
   console.table(settings);

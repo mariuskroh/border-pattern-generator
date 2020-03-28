@@ -6,6 +6,7 @@ const getGridElementStyle = function(item) {
   const roundness = settings.roundness;
   const spaces = settings.spaces;
   const rotation = settings.rotation;
+  const scale = settings.scale;
   const selectedStyle = settings.elementStyle;
 
   // the different styles
@@ -50,8 +51,8 @@ const getGridElementStyle = function(item) {
   item.style.borderWidth = styleVariations[getRandomNumber];
   // apply roundness
   item.style.borderRadius = `${roundness}%`;
-  // apply rotation
-  item.style.transform = `rotate(${rotation}deg)`;
+  // apply rotation & scale
+  item.style.transform = `rotate(${rotation}deg) scale(${scale})`;
 
   return item;
 };
