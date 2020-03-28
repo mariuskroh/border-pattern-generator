@@ -6,7 +6,7 @@ const getGridElementStyle = function(item) {
   const roundness = settings.roundness;
   const spaces = settings.spaces;
   const rotation = settings.rotation;
-  const scale = settings.scale;
+  const scale = settings.scale / 10;
   const selectedStyle = settings.elementStyle;
 
   // the different styles
