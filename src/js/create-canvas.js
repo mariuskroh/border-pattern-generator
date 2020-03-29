@@ -1,5 +1,5 @@
 import { canvas } from "./globals";
-const createCanvas = function() {
+export default function createCanvas() {
   const windowWidth = window.innerWidth;
 
   canvas.style.width = `${windowWidth / 2}px`;
@@ -8,6 +8,4 @@ const createCanvas = function() {
   canvas.style.top = `50%`;
   canvas.style.transform = `translate(-50%, -50%)`;
   return;
-};
-
-export default createCanvas;
+}

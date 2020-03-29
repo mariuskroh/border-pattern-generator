@@ -6,14 +6,13 @@ const options = {
     canvas.style.width = "1000 px";
   }
 };
-export const htmlCanvas = function() {
+export default function htmlCanvas() {
   html2canvas(canvas, options).then(function(canvas) {
     const img = canvas.toDataURL("image/png");
     downloadImage(img, "pattern.png");
     console.log("toData");
   });
-};
-export default htmlCanvas;
+}
 
 //Creates (and removes) dummy anchor tag for automatic download
 //Obviously not an ideal solution...
