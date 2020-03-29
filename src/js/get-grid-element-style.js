@@ -1,15 +1,11 @@
 import { settings } from "./get-settings.js";
-// refactor this in further versions in several functions
-// to make even more complicated patterns and keep everything modular
+
 const getGridElementStyle = function(item) {
   const strokeWidth = settings.strokeWidth;
-  const roundness = settings.roundness;
-  const spaces = settings.spaces;
-  const rotation = settings.rotation;
-  const scale = settings.scale / 10;
   const selectedStyle = settings.elementStyle;
+  const spaces = settings.spaces;
 
-  // the different styles
+  // the different border styles
   const elementStyles = {
     single: [
       `${strokeWidth}px 0 0 0`,
@@ -49,10 +45,6 @@ const getGridElementStyle = function(item) {
   const getRandomNumber = Math.floor(Math.random() * Math.floor(limit));
   // get the style & apply to element
   item.style.borderWidth = styleVariations[getRandomNumber];
-  // apply roundness
-  item.style.borderRadius = `${roundness}%`;
-  // apply rotation & scale
-  item.style.transform = `rotate(${rotation}deg) scale(${scale})`;
 
   return item;
 };
