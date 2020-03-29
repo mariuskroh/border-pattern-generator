@@ -7,6 +7,9 @@ const spaces = document.querySelector("#spaces");
 const rotation = document.querySelector("#rotation");
 const scale = document.querySelector("#scale");
 const randomize = document.querySelector("#randomize");
+const randomizeRoundness = document.querySelector("#randomizeRoundness");
+const randomizeRotation = document.querySelector("#randomizeRotation");
+const randomizeScale = document.querySelector("#randomizeScale");
 
 export let settings = {};
 export const getSettings = function() {
@@ -19,7 +22,10 @@ export const getSettings = function() {
     spaces: spaces.value,
     rotation: rotation.value,
     scale: scale.value,
-    randomize: randomize.value
+    randomize: randomize.value,
+    randomizeRotation: randomizeRotation.checked,
+    randomizeRoundness: randomizeRoundness.checked,
+    randomizeScale: randomizeScale.checked
   };
   console.clear();
   console.table(settings);
