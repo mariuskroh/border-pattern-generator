@@ -39,7 +39,11 @@ inputs.forEach(input => input.addEventListener("change", makePattern));
 select.addEventListener("change", getSettings);
 select.addEventListener("change", makePattern);
 //display slider values
-range.forEach(slider => slider.addEventListener("change", displaySliderValues));
+range.forEach(slider =>
+  slider.addEventListener("mousedown", displaySliderValues)
+);
+//reset labels on mouseup
+
 //resize canvas
 window.addEventListener("resize", createCanvas);
 //export pattern
