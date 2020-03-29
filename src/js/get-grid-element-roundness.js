@@ -1,7 +1,7 @@
 import { settings } from "./get-settings.js";
 import randomizeInput from "./randomize-input.js";
 
-const getGridElementRoundness = function(item) {
+export default function getGridElementRoundness(item) {
   const randomize = settings.randomize;
   const roundness = settings.roundness;
   const randomizeRoundness = settings.randomizeRoundness;
@@ -13,6 +13,4 @@ const getGridElementRoundness = function(item) {
   }
 
   return item;
-};
-
-export default getGridElementRoundness;
+}
