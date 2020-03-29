@@ -19,8 +19,24 @@
         <button class="button create-pattern">
           Create Pattern
         </button>
+        <button class="button export-pattern">
+          Export Pattern
+        </button>
         <div class="pattern-settings">
-          <label for="base-count">base count</label>
+          <div class="label-container">
+            <label for="element-style">element style</label>
+          </div>
+          <select id="element-style" name="element-style" size="1">
+            <option value="single">single</option>
+            <option value="parallel">parallel</option>
+            <option value="corner">corner</option>
+            <option value="open">open</option>
+            <option value="square">square</option>
+          </select>
+          <div class="label-container">
+            <label for="base-count">base count</label>
+          </div>
+
           <input
             id="base-count"
             type="range"
@@ -29,7 +45,9 @@
             max="64"
             value="16"
           />
-          <label for="stroke-width">stroke width</label>
+          <div class="label-container">
+            <label for="stroke-width">stroke width</label>
+          </div>
           <input
             id="stroke-width"
             type="range"
@@ -38,8 +56,9 @@
             max="64"
             value="3"
           />
-
-          <label for="gap-size">gap size</label>
+          <div class="label-container">
+            <label for="gap-size">gap size</label>
+          </div>
           <input
             id="gap-size"
             type="range"
@@ -48,30 +67,9 @@
             max="32"
             value="16"
           />
-          <label for="element-style">element style</label>
-          <select id="element-style" name="element-style" size="1">
-            <option value="single">single</option>
-            <option value="parallel">parallel</option>
-            <option value="corner">corner</option>
-            <option value="open">open</option>
-            <option value="square">square</option>
-          </select>
-          <label for="roundness">roundness</label>
-          <input
-            id="roundness"
-            type="range"
-            name="roundness"
-            min="0"
-            max="50"
-            value="0"
-          />
-          <input
-            type="checkbox"
-            id="randomizeRoundness"
-            name="randomizeRoundness"
-          />
-
-          <label for="spaces">spaces</label>
+          <div class="label-container">
+            <label for="spaces">spaces</label>
+          </div>
           <input
             id="spaces"
             type="range"
@@ -80,32 +78,9 @@
             max="10"
             value="0"
           />
-          <label for="rotation">rotation</label>
-          <input
-            id="rotation"
-            type="range"
-            name="rotation"
-            min="-180"
-            max="180"
-            value="0"
-          />
-          <input
-            type="checkbox"
-            id="randomizeRotation"
-            name="randomizeRotation"
-          />
-
-          <label for="scale">scale</label>
-          <input
-            id="scale"
-            type="range"
-            name="scale"
-            min="1"
-            max="50"
-            value="10"
-          />
-          <input type="checkbox" id="randomizeScale" name="randomizeScale" />
-          <label for="randomize">randomize</label>
+          <div class="label-container">
+            <label for="randomize">randomize</label>
+          </div>
           <input
             id="randomize"
             type="range"
@@ -114,10 +89,53 @@
             max="100"
             value="0"
           />
+          <div class="label-container">
+            <label for="roundness">roundness</label>
+            <input
+              type="checkbox"
+              id="randomizeRoundness"
+              name="randomizeRoundness"
+            />
+          </div>
+          <input
+            id="roundness"
+            type="range"
+            name="roundness"
+            min="0"
+            max="50"
+            value="0"
+          />
+
+          <div class="label-container">
+            <label for="rotation">rotation</label>
+            <input
+              type="checkbox"
+              id="randomizeRotation"
+              name="randomizeRotation"
+            />
+          </div>
+          <input
+            id="rotation"
+            type="range"
+            name="rotation"
+            min="-180"
+            max="180"
+            value="0"
+          />
+
+          <div class="label-container">
+            <label for="scale">scale</label>
+            <input type="checkbox" id="randomizeScale" name="randomizeScale" />
+          </div>
+          <input
+            id="scale"
+            type="range"
+            name="scale"
+            min="1"
+            max="50"
+            value="10"
+          />
         </div>
-        <button class="button export-pattern">
-          Export Pattern
-        </button>
       </div>
     </nav>
     <main>
