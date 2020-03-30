@@ -1,23 +1,39 @@
 @use "../utils/variables";
+
 $track-color: variables.$grey !default;
 $thumb-color: variables.$dark !default;
 
 $thumb-radius: 50% !default;
 $thumb-height: 18px !default;
 $thumb-width: 18px !default;
-$thumb-border-width: 4px !default;
+$thumb-shadow-size: 0px !default;
+$thumb-shadow-blur: 0px !default;
+$thumb-shadow-color: variables.$bright !default;
+$thumb-border-width: 3px !default;
 $thumb-border-color: variables.$bright !default;
 
 $track-width: 200px !default;
-$track-height: 4px !default;
-
+$track-height: 3px !default;
+$track-shadow-size: 0px !default;
+$track-shadow-blur: 0px !default;
+$track-shadow-color: variables.$bright !default;
 $track-border-width: 0px !default;
 $track-border-color: variables.$bright !default;
 
 $track-radius: 5px !default;
-$contrast: 50% !default;
+$contrast: 5% !default;
 
 $ie-bottom-track-color: darken($track-color, $contrast) !default;
+
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color,
+    0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+@mixin focusShadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size 4px $shadow-color,
+    0 0 $shadow-size lighten($shadow-color, 5%);
+}
 
 @mixin track {
   cursor: pointer;
@@ -27,6 +43,7 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 }
 
 @mixin thumb {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
   background: $thumb-color;
   border: $thumb-border-width solid $thumb-border-color;
   border-radius: $thumb-radius;
@@ -38,9 +55,14 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 
 [type="range"] {
   -webkit-appearance: none;
+  overflow: hidden;
   background: transparent;
   padding: $thumb-height / 2 0;
   width: $track-width;
+
+  &::-moz-range-progress {
+    background-color: variables.$bright;
+  }
 
   &::-moz-focus-outer {
     border: 0;
@@ -50,11 +72,16 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
     outline: 0;
 
     &::-webkit-slider-runnable-track {
-      background: lighten($track-color, $contrast);
+      background: variables.$bright;
+      @include focusShadow(
+        $thumb-shadow-size,
+        $thumb-shadow-blur,
+        $thumb-shadow-color
+      );
     }
 
     &::-ms-fill-lower {
-      background: $track-color;
+      background: variables.$bright;
     }
 
     &::-ms-fill-upper {
@@ -64,6 +91,11 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
 
   &::-webkit-slider-runnable-track {
     @include track;
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     background: $track-color;
     border: $track-border-width solid $track-border-color;
     border-radius: $track-radius;
@@ -75,22 +107,38 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
     margin-top: (
       (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2
     );
+    // box-shadow: -$track-width 0 0 $track-width variables.$bright;
   }
   &:focus {
     &::-webkit-slider-thumb {
       background-color: variables.$bright;
+      @include focusShadow(
+        $thumb-shadow-size,
+        $thumb-shadow-blur,
+        $thumb-shadow-color
+      );
     }
     &::-moz-range-track {
       background-color: variables.$bright;
+      @include focusShadow(
+        $thumb-shadow-size,
+        $thumb-shadow-blur,
+        $thumb-shadow-color
+      );
     }
   }
 
   &::-moz-range-track {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     @include track;
     background: $track-color;
     border: $track-border-width solid $track-border-color;
     border-radius: $track-radius;
-    height: $track-height / 2;
+    //height: $track-height / 2;
   }
 
   &::-moz-range-thumb {
@@ -99,6 +147,11 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
   &:focus {
     &::-moz-range-thumb {
       background-color: variables.$bright;
+      @include focusShadow(
+        $thumb-shadow-size,
+        $thumb-shadow-blur,
+        $thumb-shadow-color
+      );
     }
   }
 
@@ -111,12 +164,22 @@ $ie-bottom-track-color: darken($track-color, $contrast) !default;
   }
 
   &::-ms-fill-lower {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     background: $ie-bottom-track-color;
     border: $track-border-width solid $track-border-color;
     border-radius: ($track-radius * 2);
   }
 
   &::-ms-fill-upper {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
     background: $track-color;
     border: $track-border-width solid $track-border-color;
     border-radius: ($track-radius * 2);
