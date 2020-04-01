@@ -16,6 +16,7 @@ button {
   &:focus {
     background-color: variables.$bright;
     color: variables.$dark;
+    outline: 0;
   }
   &:active {
     transform: translateY(2px);
