@@ -8,20 +8,22 @@
   <body>
     <header>
       <div id="title"></div>
-      <div id="github">
-        <a href="https://github.com/mariuskroh/border-pattern-generator"
-          >View source on Github</a
-        >
-      </div>
     </header>
+    <main>
+      <div id="wrapper">
+        <div id="canvas"></div>
+      </div>
+    </main>
     <nav>
       <div id="controls">
-        <button class="button create-pattern">
-          Create Pattern
-        </button>
-        <button class="button export-pattern">
-          Export Pattern
-        </button>
+        <div id="button-container">
+          <button class="button create-pattern">
+            create
+          </button>
+          <button class="button export-pattern">
+            export
+          </button>
+        </div>
         <div class="pattern-settings">
           <div class="label-container">
             <label for="element-style">element style</label>
@@ -140,12 +142,12 @@
             value="10"
           />
         </div>
+        <div id="info-container">
+          <button class="button toggle-info">
+            What is this?
+          </button>
+        </div>
       </div>
     </nav>
-    <main>
-      <div id="wrapper">
-        <div id="canvas"></div>
-      </div>
-    </main>
   </body>
 </html>
