@@ -12,7 +12,7 @@ A configurable pattern generator [inspired by Vera Molnar's plotter drawings.](h
 
 - [ ] "About" Tab with short info text
 - [ ] Proper naming
-- [ ] Style checkboxes (for major browsers)
+- [x] Style checkboxes (for major browsers)
 
 ### Future releases:
 
