@@ -1,6 +1,8 @@
 @use "../utils/variables";
 
 select {
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0.05rem;
   display: block;
   font-size: 1rem;
   color: variables.$bright;
@@ -37,11 +39,4 @@ select {
   & option {
     font-weight: normal;
   }
-}
-
-.select-css:focus {
-  border-color: variables.$bright;
-  box-shadow: 0 0 4px 0 variables.$bright;
-  box-shadow: 0 0 4px 0 -moz-mac-focusring;
-  outline: none;
 }
