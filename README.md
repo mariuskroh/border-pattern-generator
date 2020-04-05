@@ -7,20 +7,28 @@ A configurable pattern generator [inspired by Vera Molnar's plotter drawings.](h
 ### Todo before first release:
 
 - [ ] Mobile styles
-- [ ] Hide the menu
 - [ ] Canvas resize
 
 - [ ] "About" Tab with short info text
 - [ ] Proper naming
-- [ ] Style checkboxes (for major browsers)
+
+### Important issues:
+
+- [ ] Sliders not working properly on mobile
+- [ ] export is flawed and creates "offset" image (mobile)
 
 ### Future releases:
 
+- [ ] Randomise pattern function
 - [ ] More pattern options - more complexity
 - [ ] A more dedicated randomize function
 - [ ] Pattern export for Illustrator
 - [ ] Fix overflow problem
 - [ ] Find a better solution than html2canvas, maybe fully switch to canvas?
-- [ ] Chrome slider progress style
 
-...
+#### Minor improvements:
+
+- [ ] Chrome slider progress style
+- [ ] Balance UI elements, margins, shadows …
+
+…

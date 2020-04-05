@@ -5,5 +5,5 @@ import { title } from "./globals.js";
 import packageJson from "../../package.json";
 
 export default function displayVersion() {
-  return (title.innerHTML = `Border Pattern Generator ${packageJson.version}`);
+  return (title.innerHTML = `Plotter Pattern Generator ${packageJson.version}`);
 }

@@ -1,0 +1,29 @@
+@use "../utils/breakpoints";
+/* omg grid is sooo fun to work with!! */
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-areas:
+    "a a a"
+    "c c c"
+    "b b b";
+  grid-template-rows: 100px;
+  @include breakpoints.lg {
+    grid-template-areas:
+      "a a a"
+      "b c c"
+      "b c c";
+  }
+}
+.grid-header {
+  grid-area: a;
+}
+.grid-controls {
+  grid-area: b;
+}
+.grid-main {
+  grid-area: c;
+}

@@ -6,146 +6,154 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
   <body>
-    <header>
-      <div id="title"></div>
-      <div id="github">
-        <a href="https://github.com/mariuskroh/border-pattern-generator"
-          >View source on Github</a
-        >
-      </div>
-    </header>
-    <nav>
-      <div id="controls">
-        <button class="button create-pattern">
-          Create Pattern
-        </button>
-        <button class="button export-pattern">
-          Export Pattern
-        </button>
-        <div class="pattern-settings">
-          <div class="label-container">
-            <label for="element-style">element style</label>
-          </div>
-          <select id="element-style" name="element-style" size="1">
-            <option value="single">single</option>
-            <option value="parallel">parallel</option>
-            <option value="corner">corner</option>
-            <option value="open">open</option>
-            <option value="square">square</option>
-          </select>
-          <div class="label-container">
-            <label for="base-count">base count</label>
-          </div>
-
-          <input
-            id="base-count"
-            type="range"
-            name="base count"
-            min="1"
-            max="64"
-            value="16"
-          />
-          <div class="label-container">
-            <label for="stroke-width">stroke width</label>
-          </div>
-          <input
-            id="stroke-width"
-            type="range"
-            name="stroke width"
-            min="1"
-            max="64"
-            value="3"
-          />
-          <div class="label-container">
-            <label for="gap-size">gap size</label>
-          </div>
-          <input
-            id="gap-size"
-            type="range"
-            name="gap size"
-            min="0"
-            max="32"
-            value="16"
-          />
-          <div class="label-container">
-            <label for="spaces">spaces</label>
-          </div>
-          <input
-            id="spaces"
-            type="range"
-            name="spaces"
-            min="0"
-            max="10"
-            value="0"
-          />
-          <div class="label-container">
-            <label for="randomize">randomize</label>
-          </div>
-          <input
-            id="randomize"
-            type="range"
-            name="randomize"
-            min="0"
-            max="100"
-            value="0"
-          />
-          <div class="label-container">
-            <label for="roundness">roundness</label>
-            <input
-              type="checkbox"
-              id="randomizeRoundness"
-              name="randomizeRoundness"
-            />
-            <span class="checkmark"></span>
-          </div>
-          <input
-            id="roundness"
-            type="range"
-            name="roundness"
-            min="0"
-            max="50"
-            value="0"
-          />
-
-          <div class="label-container">
-            <label for="rotation">rotation</label>
-            <input
-              type="checkbox"
-              id="randomizeRotation"
-              name="randomizeRotation"
-            />
-            <span class="checkmark"></span>
-          </div>
-
-          <input
-            id="rotation"
-            type="range"
-            name="rotation"
-            min="-180"
-            max="180"
-            value="0"
-          />
-
-          <div class="label-container">
-            <label for="scale">scale</label>
-            <input type="checkbox" id="randomizeScale" name="randomizeScale" />
-            <span class="checkmark"></span>
-          </div>
-          <input
-            id="scale"
-            type="range"
-            name="scale"
-            min="1"
-            max="50"
-            value="10"
-          />
+    <div class="layout-grid">
+      <header class="grid-header">
+        <div id="title"></div>
+      </header>
+      <main class="grid-main">
+        <div id="wrapper">
+          <div id="canvas"></div>
         </div>
-      </div>
-    </nav>
-    <main>
-      <div id="wrapper">
-        <div id="canvas"></div>
-      </div>
-    </main>
+      </main>
+      <nav class="grid-controls">
+        <div id="controls">
+          <div id="button-container">
+            <button class="button create-pattern">
+              create
+            </button>
+            <button class="button export-pattern">
+              export
+            </button>
+          </div>
+          <div class="pattern-settings">
+            <div class="label-container">
+              <label for="element-style">element style</label>
+            </div>
+            <select id="element-style" name="element-style" size="1">
+              <option value="single">single</option>
+              <option value="parallel">parallel</option>
+              <option value="corner">corner</option>
+              <option value="open">open</option>
+              <option value="square">square</option>
+            </select>
+            <div class="label-container">
+              <label for="base-count">base count</label>
+            </div>
+
+            <input
+              id="base-count"
+              type="range"
+              name="base count"
+              min="1"
+              max="64"
+              value="16"
+            />
+            <div class="label-container">
+              <label for="stroke-width">stroke width</label>
+            </div>
+            <input
+              id="stroke-width"
+              type="range"
+              name="stroke width"
+              min="1"
+              max="64"
+              value="3"
+            />
+            <div class="label-container">
+              <label for="gap-size">gap size</label>
+            </div>
+            <input
+              id="gap-size"
+              type="range"
+              name="gap size"
+              min="0"
+              max="32"
+              value="16"
+            />
+            <div class="label-container">
+              <label for="spaces">spaces</label>
+            </div>
+            <input
+              id="spaces"
+              type="range"
+              name="spaces"
+              min="0"
+              max="10"
+              value="0"
+            />
+            <div class="label-container">
+              <label for="randomize">randomize</label>
+            </div>
+            <input
+              id="randomize"
+              type="range"
+              name="randomize"
+              min="0"
+              max="100"
+              value="0"
+            />
+            <div class="label-container">
+              <label for="roundness">roundness</label>
+              <input
+                type="checkbox"
+                id="randomizeRoundness"
+                name="randomizeRoundness"
+              />
+              <span class="checkmark"></span>
+            </div>
+            <input
+              id="roundness"
+              type="range"
+              name="roundness"
+              min="0"
+              max="50"
+              value="0"
+            />
+
+            <div class="label-container">
+              <label for="rotation">rotation</label>
+              <input
+                type="checkbox"
+                id="randomizeRotation"
+                name="randomizeRotation"
+              />
+              <span class="checkmark"></span>
+            </div>
+
+            <input
+              id="rotation"
+              type="range"
+              name="rotation"
+              min="-180"
+              max="180"
+              value="0"
+            />
+
+            <div class="label-container">
+              <label for="scale">scale</label>
+              <input
+                type="checkbox"
+                id="randomizeScale"
+                name="randomizeScale"
+              />
+              <span class="checkmark"></span>
+            </div>
+            <input
+              id="scale"
+              type="range"
+              name="scale"
+              min="1"
+              max="50"
+              value="10"
+            />
+          </div>
+          <div id="info-container">
+            <button class="button toggle-info">
+              What is this?
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
   </body>
 </html>

@@ -1,10 +1,10 @@
-$viewport-5: 576px;
+$viewport-4: 480px;
 $viewport-7: 768px;
 $viewport-9: 992px;
 $viewport-12: 1200px;
 
 @mixin sm {
-  @media (min-width: #{$viewport-5}) {
+  @media (min-width: #{$viewport-4}) {
     @content;
   }
 }
