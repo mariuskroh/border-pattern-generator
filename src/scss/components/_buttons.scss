@@ -4,11 +4,12 @@ button {
   border: 1px solid variables.$bright;
   color: variables.$bright;
   background-color: variables.$dark;
-  width: 200px;
-  padding: 12px;
-  font-size: 18px;
-  letter-spacing: 0.06rem;
-  margin: 24px 0 0 0;
+  width: 150px;
+  padding: 1rem;
+  font-size: 16px;
+  letter-spacing: 0.05rem;
+  margin: 0;
+  border-radius: 1%;
 
   cursor: pointer;
   transition: all 0.2s linear;

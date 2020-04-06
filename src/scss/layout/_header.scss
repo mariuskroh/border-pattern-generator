@@ -1,17 +1,16 @@
 @use "../utils/variables";
+@use "../utils/breakpoints";
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
-
-  & a,
-  a:active,
-  a:visited {
-    color: variables.$bright;
-    text-decoration: none;
+  justify-content: center;
+  @include breakpoints.lg {
+    justify-content: flex-start;
   }
-  & a:hover {
-    text-decoration: underline;
+
+  #title {
+    letter-spacing: 0.05rem;
+    font-size: 1rem;
+    padding: 1rem 0rem;
   }
 }

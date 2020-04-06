@@ -1,18 +1,18 @@
 @use "../utils/variables";
 
-#wrapper {
-  #canvas {
-    position: absolute;
-    display: grid;
-    //temp
-    overflow: hidden;
+$min: 300px;
+$max: 1300px;
 
+main {
+  #canvas {
+    display: grid;
+    overflow: hidden;
     background-color: variables.$bright;
-    max-width: 1000px;
-    max-height: 1000px;
-    min-width: 500px;
-    min-height: 500px;
-    padding: 16px;
+    max-width: $max;
+    max-height: $max;
+    min-width: $min;
+    min-height: $min;
+    padding: 1rem;
     .grid-element {
       border-color: variables.$border-color;
       border-style: solid;
