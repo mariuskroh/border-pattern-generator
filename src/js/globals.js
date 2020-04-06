@@ -6,4 +6,3 @@ export const select = document.querySelector(".pattern-settings select");
 export const exportPattern = document.querySelector(".export-pattern");
 export const title = document.querySelector("#title");
 export const range = document.querySelectorAll('input[type="range"]');
-export const wrapper = document.querySelector("#wrapper");
