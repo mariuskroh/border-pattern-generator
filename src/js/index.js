@@ -10,7 +10,8 @@ import {
   range,
   select,
   createPattern,
-  exportPattern
+  exportPattern,
+  toggleModal
 } from "./globals.js";
 import clearPattern from "./clear-pattern.js";
 import createCanvas from "./create-canvas.js";
@@ -20,6 +21,7 @@ import { getSettings } from "./get-settings.js";
 import displaySliderValues from "./display-slider-values.js";
 import htmlCanvas from "./export-pattern.js";
 import displayVersion from "./display-version.js";
+import toggleInfo from "./toggle-info.js";
 
 //main function
 function makePattern() {
@@ -42,11 +44,11 @@ select.addEventListener("change", makePattern);
 range.forEach(slider =>
   slider.addEventListener("mousedown", displaySliderValues)
 );
-//reset labels on mouseup
-
 //resize canvas
 window.addEventListener("resize", createCanvas);
 //export pattern
 exportPattern.addEventListener("click", htmlCanvas);
+//togle info
+toggleModal.addEventListener("click", toggleInfo);
 //get version
 displayVersion();
