@@ -11,13 +11,13 @@ $box-shadow-color: variables.$bright !default;
 }
 
 .label-container input {
-  position: absolute;
-  right: 0;
   opacity: 0;
   cursor: pointer;
   height: $checkbox-size;
   width: $checkbox-size;
   margin: 0;
+  position: absolute;
+  z-index: 200;
 
   &:checked ~ .checkmark {
     @include shadow($box-shadow-size, $box-shadow-blur, $box-shadow-color);
@@ -38,7 +38,7 @@ $box-shadow-color: variables.$bright !default;
   border-radius: 10%;
   border: 2px solid variables.$bright;
   box-sizing: border-box;
-
+  position: absolute;
   // &:after {
   //   content: "";
   //   display: none;

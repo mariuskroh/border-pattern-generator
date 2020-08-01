@@ -2,20 +2,21 @@
 /* omg grid is sooo fun to work with!! */
 .layout-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 2rem;
   grid-row-gap: 0px;
+  margin: 0 2rem;
   grid-template-areas:
-    "a a a"
-    "c c c"
-    "b b b";
-  grid-template-rows: 100px;
+    "a a a a"
+    "c c c c"
+    "b b b b";
+  grid-template-rows: 3rem;
   @include breakpoints.lg {
     grid-template-areas:
-      "a a a"
-      "b c c"
-      "b c c";
+      "a a a a"
+      "b c c c"
+      "b c c c";
   }
 }
 .grid-header {
